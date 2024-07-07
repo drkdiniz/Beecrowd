@@ -23,8 +23,8 @@ public class MediasPonderadas {
             double media = (x * PESO1 + y * PESO2 + z * PESO3) / (PESO1 + PESO2 + PESO3);
             vect[i] = media;
         }
-        for (int i = 0; i < vect.length; i++) {
-            System.out.printf("%.1f\n", vect[i]);
+        for (double v : vect) {
+            System.out.printf("%.1f\n", v);
         }
         sc.close();
     }
