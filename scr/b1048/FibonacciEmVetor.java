@@ -1,5 +1,6 @@
 package b1048;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class FibonacciEmVetor {
@@ -7,14 +8,14 @@ public class FibonacciEmVetor {
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] vect = new int[60];
+        BigInteger[] vect = new BigInteger[100];
         int[] posicao = new int[n];
 
-        vect[0] = 0;
-        vect[1] = 1;
+        vect[0] = BigInteger.valueOf(0);
+        vect[1] = BigInteger.valueOf(1);
 
         for (int i = 2; i < vect.length; i++) {
-            vect[i] = vect[i -2] + vect[i -1];
+            vect[i] = vect[i - 2].add(vect[i - 1]);
 
         }
         for (int i = 0; i < n; i++) {
