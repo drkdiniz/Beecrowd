@@ -8,7 +8,6 @@ public class AbaixoDaDiagonalSecundaria {
 
         Scanner sc = new Scanner(System.in);
 
-
         char O = sc.next().charAt(0);
 
         double[][] matriz = new double[12][12];
@@ -18,14 +17,12 @@ public class AbaixoDaDiagonalSecundaria {
             }
         }
         double sum = 0.0;
-
         int cont = 0;
         for (int i = 11; i > 0; i--) {
             for (int j = 11; j > cont; j--) {
                 sum += matriz[i][j];
             }
             cont++;
-
         }
         if (O == 'M') {
             sum = sum / 66;
@@ -35,3 +32,6 @@ public class AbaixoDaDiagonalSecundaria {
         sc.close();
     }
 }
+
+
+

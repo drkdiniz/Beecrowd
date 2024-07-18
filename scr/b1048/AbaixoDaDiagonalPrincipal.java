@@ -5,10 +5,7 @@ import java.util.Scanner;
 public class AbaixoDaDiagonalPrincipal {
     public static void main(String[] args) {
 
-
-
         Scanner sc = new Scanner(System.in);
-
         char O = sc.next().charAt(0);
 
         double[][] matriz = new double[12][12];
@@ -18,21 +15,24 @@ public class AbaixoDaDiagonalPrincipal {
             }
         }
         double sum = 0.0;
-
         for (int i = 11; i > 0; i--) {
             for (int j = i - 1; j >= 0; j--) {
                 sum += matriz[i][j];
-
             }
         }
         if (O == 'M') {
             sum = sum / 66;
-        }
-        System.out.printf("%.1f\n", sum);
-
-
+        }System.out.printf("%.1f\n", sum);
         sc.close();
-
-
     }
 }
+
+
+
+
+
+
+
+
+
+

@@ -20,20 +20,20 @@ public class AreaDireita {
         for (int i = 10; i > 0; i--) {
             for (int j = 11; j > i - contador; j--) {
                 sum += matriz[i][j];
-            }
-            if (i == 6){
+            }if (i == 6){
                 contador --;
-            }
-            if (i < 6){
+
+            }if (i < 6){
                 contador -= 2;
             }
-        }
-        if (O == 'M') {
+        }if (O == 'M') {
             sum = sum / 30;
         }
-
         System.out.printf("%.1f\n", sum);
-
         sc.close();
     }
 }
+
+
+
+

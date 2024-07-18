@@ -21,11 +21,9 @@ public class AreaEsquerda {
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < i - contador; j++) {
                     sum += matriz[i][j];
-            }
-            if (i == 5){
+            }if (i == 5){
                 contador ++;
-            }
-            if (i > 5){
+            }if (i > 5){
                 contador += 2;
             }
         }
@@ -33,10 +31,12 @@ public class AreaEsquerda {
             sum = sum / 30;
         }
         System.out.printf("%.1f\n", sum);
-
         sc.close();
     }
 }
+
+
+
 
 
 

@@ -16,19 +16,19 @@ public class AcimaDaDiagonalPrincipal {
             }
         }
         double sum = 0.0;
-
         for (int i = 0; i < 12; i++) {
             for (int j = i + 1; j < 12; j++) {
                 sum += matriz[i][j];
-
             }
         }
         if (O == 'M') {
             sum = sum / 66;
         }
         System.out.printf("%.1f\n", sum);
-
-
         sc.close();
     }
 }
+
+
+
+

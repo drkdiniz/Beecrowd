@@ -6,8 +6,6 @@ public class AcimaDaDiagonalSecundaria {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
-
         char O = sc.next().charAt(0);
 
         double[][] matriz = new double[12][12];
@@ -17,20 +15,22 @@ public class AcimaDaDiagonalSecundaria {
             }
         }
         double sum = 0.0;
-
         for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 11 - i; j++) {
                 sum += matriz[i][j];
-
             }
         }
         if (O == 'M') {
             sum = sum / 66;
         }
         System.out.printf("%.1f\n", sum);
-
-
-
         sc.close();
     }
 }
+
+
+
+
+
+
+
