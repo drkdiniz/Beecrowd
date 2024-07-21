@@ -39,14 +39,11 @@ public class MatrizQuadrada4 {
             }
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[i].length; j++) {
-                    if (j == 0) {
-                        sb.append(matriz[i][j]);
-                    } else {
-                        sb.append(" ").append(matriz[i][j]);
-                    }
+                    sb.append(matriz[i][j]);
                 }
                 sb.append("\n");
             }
+            sb.append("\n");
         }
         System.out.print(sb);
         sc.close();
