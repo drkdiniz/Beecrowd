@@ -11,23 +11,30 @@ public class MatrizQuadrada4 {
 
             if (!sc.hasNextInt()) break;
             int n = sc.nextInt();
-            if (n < 5 || n > 102) break;
+            if (n < 5 || n > 102 || n % 2 == 0) break;
 
             int[][] matriz = new int[n][n];
+            int terco = n / 3;
+            int finalTerco = terco * 2 - 1;
 
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
-                    if (i == (n - 1)/2 && j == (n - 1)/2) {
-                        matriz[i][j] = 4;
-                    }
-                    else if (i != 0 && i != n-1 && j != 0 & j != n-1) {
+                    if (i >= terco && i <= finalTerco && j >= terco && j <= finalTerco) {
                         matriz[i][j] = 1;
                     }
-                    else if (i == j) {
+                }
+            }
+
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (i == (n - 1) / 2 && j == (n - 1) / 2) {
+                        matriz[i][j] = 4;
+                    } else if (i == j) {
                         matriz[i][j] = 2;
-                    }
-                    else if (j == n - 1 - i) {
+                    } else if (j == n - 1 - i) {
                         matriz[i][j] = 3;
+                    } else {
+                        matriz[i][j] = 0;
                     }
                 }
             }
