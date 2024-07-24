@@ -9,7 +9,6 @@ public class BemVindoAoInverno {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-
             if (!sc.hasNextInt()) break;
             int a = sc.nextInt();
             if (a > 100 || a < -100) break;
@@ -22,33 +21,33 @@ public class BemVindoAoInverno {
             int c = sc.nextInt();
             if (c > 100 || c < -100) break;
 
-            int difAB = Math.abs(a - b);
-            int difBC = Math.abs(b - c);
+            int difAB = b - a;
+            int difBC = c - b;
 
-            if (a > b) {
-                if (c >= b) {
-                    System.out.println(":)");
-                } else if (difAB > difBC) {
+            if (difAB < 0) { // a > b
+                if (difBC >= 0) {
                     System.out.println(":)");
                 } else if (difBC > difAB) {
+                    System.out.println(":)");
+                } else {
                     System.out.println(":(");
                 }
-            } else if (a < b) {
-                if (c <= b) {
+            } else if (difAB > 0) { // a < b
+                if (difBC <= 0) {
                     System.out.println(":(");
-                } else if (difAB > difBC) {
+                } else if (difBC < difAB) {
                     System.out.println(":(");
-                } else if (difBC > difAB) {
+                } else {
                     System.out.println(":)");
                 }
-            } else {
-                if (c > b) {
+            } else { // a == b
+                if (difBC > 0) {
                     System.out.println(":)");
                 } else {
                     System.out.println(":(");
                 }
             }
         }
-
+        sc.close();
     }
 }
