@@ -12,9 +12,11 @@ public class DomingoDeManha {
         StringBuilder sb = new StringBuilder();
 
         while (true) {
+
+            String input = sc.next().trim();
             LocalTime a = LocalTime.parse("5:00", fmt);
             LocalTime b = LocalTime.parse("9:00", fmt);
-            LocalTime horario = LocalTime.parse(sc.next(), fmt);
+            LocalTime horario = LocalTime.parse(input, fmt);
 
             if (horario.isBefore(a) || horario.isAfter(b)) break;
 
@@ -25,10 +27,10 @@ public class DomingoDeManha {
 
             long minutos = duration.toMinutes();
 
-            if (minutos > 0) {
-                minutos = 0;
-            } else {
+            if (minutos < 0) {
                 minutos = Math.abs(minutos);
+            } else {
+                minutos = 0;
             }
 
             sb.append("Atraso maximo: ").append(minutos).append("\n");
