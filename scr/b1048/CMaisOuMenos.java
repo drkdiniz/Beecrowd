@@ -1,7 +1,6 @@
 package b1048;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class CMaisOuMenos {
@@ -9,42 +8,39 @@ public class CMaisOuMenos {
 
         Scanner sc = new Scanner(System.in);
 
-        Map<String, Integer> map = new HashMap<>();
+        HashMap<String, Integer> alimentos = new HashMap<>();
+        alimentos.put("suco de laranja", 120);
+        alimentos.put("morango fresco", 85);
+        alimentos.put("mamao", 85);
+        alimentos.put("goiaba vermelha", 70);
+        alimentos.put("manga", 56);
+        alimentos.put("laranja", 50);
+        alimentos.put("brocolis", 34);
 
-        map.put("suco de laranja", 120);
-        map.put("morango fresco", 85);
-        map.put("mamao", 85);
-        map.put("goiaba vermelha", 70);
-        map.put("manga", 56);
-        map.put("laranja", 50);
-        map.put("brocolis", 34);
+        while (true) {
+            int T = sc.nextInt();
 
-        int n = sc.nextInt();
-        sc.nextLine();
-        while (n != 0) {
+            if (T == 0) {
+                break;
+            }
 
-            int cont = 0;
-            for (int i = 0; i < n; i++) {
+            int totalVitaminaC = 0;
+
+            for (int i = 0; i < T; i++) {
                 int quantidade = sc.nextInt();
-                sc.nextLine();
-                String nome = sc.nextLine().trim().toLowerCase();
-                if (map.containsKey(nome)) {
-                    cont += map.get(nome) * quantidade;
-                }
+                String alimento = sc.nextLine().trim();
+                totalVitaminaC += quantidade * alimentos.get(alimento);
             }
-            if (cont >= 110 && cont <= 130) {
-                System.out.println(cont +" mg");
-            }else if (cont > 130) {
-                int result = cont - 130;
-                System.out.println("Menos "+result+" mg");
-            } else  {
-                int result = 110 - cont;
-                System.out.println("Mais "+result+" mg");
+
+            if (totalVitaminaC > 130) {
+                System.out.println("Menos " + (totalVitaminaC - 130) + " mg");
+            } else if (totalVitaminaC < 110) {
+                System.out.println("Mais " + (110 - totalVitaminaC) + " mg");
+            } else {
+                System.out.println(totalVitaminaC + " mg");
             }
-            if (!sc.hasNextInt()) break;
-            n = sc.nextInt();
-            sc.nextLine();
         }
+
         sc.close();
     }
 }
